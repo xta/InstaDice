@@ -160,23 +160,30 @@ nav a:hover {
 
 #dice-one, #dice-two {
     font-size: 800%;
-    padding: 60px 40px 20px 40px;
-    margin: 40px;
+    padding: 60px 40px 20px 30px;
+    margin: 20px;
     width: 60px;
     height: 60px;
-    text-align: center;
-    border: 4px #333 solid;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    border: 4px #000 solid;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    float: left;
+    background-color: #fff;
 }
 
+#dice-two {
+    margin: 20px 0;
+}
 
 
 a:link,a:visited,a:hover,a:focus,a:active {
     color: #fff;
 }
 
+.main-container {
+    background-color: #1D7373;
+}
 
 
 
