@@ -13,6 +13,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    background-color: #3D9970;
 }
 
 ::-moz-selection {
@@ -73,19 +74,10 @@ body {
     ALL: Orange Theme
    =================== */
 
-.header-container {
-    border-bottom: 20px solid #5CCCCC;
-}
-
-.footer-container,
-.main aside {
-    border-top: 20px solid #5CCCCC;
-}
-
 .header-container,
 .footer-container,
 .main aside {
-    background: #33CCCC;
+    background: #AAAAAA;
 }
 
 .title {
@@ -182,7 +174,7 @@ a:link,a:visited,a:hover,a:focus,a:active {
 }
 
 .main-container {
-    background-color: #1D7373;
+    background-color: #3D9970;
 }
 
 #re-roll {
@@ -201,6 +193,8 @@ a:link,a:visited,a:hover,a:focus,a:active {
     padding:20px;
     text-decoration:none;
     text-shadow:1px 1px 0px #ffffff;
+    cursor: pointer;
+    cursor: hand;
 }
 
 #re-roll:hover {
