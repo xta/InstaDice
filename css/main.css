@@ -13,7 +13,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    background-color: #3D9970;
+    background-color: #7FDBFF;
 }
 
 ::-moz-selection {
@@ -77,7 +77,7 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: #AAAAAA;
+    background: #0074D9;
 }
 
 .title {
@@ -174,7 +174,7 @@ a:link,a:visited,a:hover,a:focus,a:active {
 }
 
 .main-container {
-    background-color: #3D9970;
+    background-color: #7FDBFF;
 }
 
 #re-roll {

@@ -31,7 +31,7 @@ $(document).ready(function() {
     $('#dice-one').text(roll_one);
     $('#dice-two').text(roll_two);
 
-    event_log = 'Time: ' + current_time() +'. Dice: [' + roll_one + '], [' + roll_two + '].';
+    event_log = current_time() +'. Dice: [' + roll_one + '], [' + roll_two + '].';
     $("ul#log").prepend($("<li></li>").html(event_log));
   };
 
