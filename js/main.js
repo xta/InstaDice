@@ -23,13 +23,26 @@ $(document).ready(function() {
     return dateTime;
   };
 
-  var roll_dice = function(){
+  var rolling = false;
+
+  var roll_dice = function(animate){
     var roll_one = random_dice_roll(),
         roll_two = random_dice_roll(),
         event_log;
 
     $('#dice-one').text(roll_one);
     $('#dice-two').text(roll_two);
+
+    if(animate) {
+      $('#dice-one, #dice-two').addClass('rolled');
+      // reduced-motion disables the animation, so animationend would never fire
+      var style = window.getComputedStyle($('#dice-one')[0]),
+          name  = style.animationName || style.webkitAnimationName;
+      rolling = !!name && name !== 'none';
+      if(!rolling) {
+        $('#dice-one, #dice-two').removeClass('rolled');
+      }
+    }
 
     event_log = current_time() +'. Dice: [' + roll_one + '], [' + roll_two + '].';
     $("ul#log").prepend($("<li></li>").html(event_log));
@@ -38,9 +51,16 @@ $(document).ready(function() {
   // on page load, insert new dice roll
   roll_dice();
 
-  // on click #roll_the_dice
+  // when the animation finishes, clear it and allow the next roll
+  $('#dice-one').on('animationend webkitAnimationEnd', function() {
+    $('#dice-one, #dice-two').removeClass('rolled');
+    rolling = false;
+  });
+
+  // on click #roll_the_dice, ignored while the dice are still animating
   $('#re-roll').click(function() {
-    roll_dice();
+    if(rolling) { return; }
+    roll_dice(true);
   });
 
 });

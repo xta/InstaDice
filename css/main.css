@@ -178,30 +178,62 @@ a:link,a:visited,a:hover,a:focus,a:active {
 }
 
 #re-roll {
-    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-    background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-    background-color:#ededed;
+    -moz-box-shadow:inset 0px 1px 0px 0px #7be08a;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #7be08a;
+    box-shadow:inset 0px 1px 0px 0px #7be08a;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2ECC40), color-stop(1, #25a834) );
+    background:-moz-linear-gradient( center top, #2ECC40 5%, #25a834 100% );
+    background-color:#2ECC40;
     -moz-border-radius:20px;
     -webkit-border-radius:20px;
     border-radius:20px;
-    border:1px solid #dcdcdc;
+    border:1px solid #1e8f2b;
     display:inline-block;
-    color:#000;
-    padding:20px;
+    color:#fff;
+    /* line-height 1 + extra top padding: "Roll Dice" has no descenders, so
+       the caps sit high in the line box without this */
+    line-height:1;
+    padding:20px 20px 14px;
     text-decoration:none;
-    text-shadow:1px 1px 0px #ffffff;
+    text-shadow:1px 1px 0px #1e8f2b;
     cursor: pointer;
     cursor: hand;
 }
 
 #re-roll:hover {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
-    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-    background-color:#dfdfdf;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #25a834), color-stop(1, #2ECC40) );
+    background:-moz-linear-gradient( center top, #25a834 5%, #2ECC40 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#25a834', endColorstr='#2ECC40');
+    background-color:#25a834;
+}
+
+#re-roll:active {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+}
+
+/* re-roll indicator: quick tilt + pop */
+.rolled {
+    -webkit-animation: dice-roll 0.4s ease-out;
+            animation: dice-roll 0.4s ease-out;
+}
+
+@-webkit-keyframes dice-roll {
+    0%   { -webkit-transform: rotate(0) scale(1); }
+    30%  { -webkit-transform: rotate(-12deg) scale(0.9); }
+    60%  { -webkit-transform: rotate(8deg) scale(1.05); }
+    100% { -webkit-transform: rotate(0) scale(1); }
+}
+
+@keyframes dice-roll {
+    0%   { transform: rotate(0) scale(1); }
+    30%  { transform: rotate(-12deg) scale(0.9); }
+    60%  { transform: rotate(8deg) scale(1.05); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rolled { -webkit-animation: none; animation: none; }
 }
 
 
